@@ -77,6 +77,7 @@ function js() {
     .pipe(terser())
     .pipe(sourcemaps ? sourcemaps.write() : noop())
     .pipe(gulp.dest(dist + 'js/'));
+    .pipe(browsersync.stream());
 
 }
 exports.js = js;
